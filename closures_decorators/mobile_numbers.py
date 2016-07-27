@@ -44,6 +44,7 @@ class Mobiler(list):
     def wrap_number(func):
         PREFIX = '+91'
         DIGITS = 10
+
         def wrapper(self, value):
             number = value[-DIGITS:]
             value = '%s %s %s' % (PREFIX, number[:5], number[5:])
@@ -55,6 +56,7 @@ class Mobiler(list):
     @wrap_number
     def append(self, value):
         self.values.append(value)
+
 
 def main():
     mobiler = Mobiler()
